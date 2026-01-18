@@ -33,17 +33,15 @@ To manage the OpenWeather API limits, the Remix loader route will need to implem
 ### Dev pre-requisites
 
 - [Git CLI](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-
 - The current LTS version of [Node.js](https://nodejs.org/en) (22.x.x)
-
 - [Docker Desktop](https://docs.docker.com/get-docker/) with a free Docker Hub account
 - Code editor, e.g. [VS Code](https://code.visualstudio.com/download)
 - [Kubernetes CLI (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/)
 
 ### TODO
 
-- sign-up for a free account at [OpenWeather API](https://home.openweathermap.org/users/sign_up)
-- this should send you an email with a new API key (it may take up to two hours before it is active)
+- sign-up for a free account at [OpenWeather API](https://home.openweathermap.org/users/sign_up) *DONE*
+- this should send you an email with a new API key (it may take up to two hours before it is active) *DONE*
 - set a local environment variable in your terminal called `WEATHER_API_KEY` with the value of your API key. It will be needed later.
 
 ```sh
