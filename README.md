@@ -125,18 +125,18 @@ Reference: [What are containers?](https://www.docker.com/resources/what-containe
 
 The Dockerfile describes the runtime environment for our application including OS version, application code, and any dependency libraries. The container images are build in multiple steps (layers) so that minimal deltas can be distributed as the application evolves over time.
 
-Review the Dockerfile included at the top level of your project files.
+Review the Dockerfile included at the top level of your project files. *CONVERTED for Windows*
 
 #### Build the container image
 
-In the terminal, at the top level of your project, run the `docker build --tag=cst8918-a01-weather-app .` command. This will tell the docker engine to look for the default `Dockerfile` in the current directory and use those instructions to create the Docker container image. When that is complete, the image will be tagged with the name `cst8918-a01-weather-app:latest`.
+In the terminal, at the top level of your project, run the `docker build --tag=cst8918-a01-weather-app .` command. This will tell the docker engine to look for the default `Dockerfile` in the current directory and use those instructions to create the Docker container image. When that is complete, the image will be tagged with the name `cst8918-a01-weather-app:latest`. *DONE*
 
 #### Test the container
 
-Quickly deploy an instance of the container using Docker desktop.
+Quickly deploy an instance of the container using Docker desktop. *DONE*
 
 ```sh
-docker run -d --name weather -p 8080:8080 --env WEATHER_API_KEY=<your-api-key> cst8918-a01-weather-app
+docker run -d --name weather -p 8080:8080 --env WEATHER_API_KEY=<your-api-key> cst8918-a01-weather-app 
 ```
 
 Then open `http://localhost:8080` in a browser to make sure that the container is working as expected.
@@ -144,13 +144,13 @@ If everything is working, you can stop the container with `docker stop weather`.
 
 #### Push the container image to the registry
 
-If this is your first time using Docker Hub, you will need to authenticate with Docker Hub first.
+If this is your first time using Docker Hub, you will need to authenticate with Docker Hub first. *DONE*
 
 ```sh
 docker login docker.io
 ```
 
-Then tag the container image with an alias that is prefixed with your Docker Hub username, and push that to the Docker Hub container registry.
+Then tag the container image with an alias that is prefixed with your Docker Hub username, and push that to the Docker Hub container registry. *DONE*
 
 ```sh
 docker tag cst8918-a01-weather-app <docker-hub-username>/cst8918-a01-weather-app
@@ -159,12 +159,12 @@ docker push <docker-hub-username>/cst8918-a01-weather-app
 
 ### Working with Kubernetes Locally
 
-- enable Kubernetes in Docker Desktop
+- enable Kubernetes in Docker Desktop *DONE*
 - [install kubectl](https://kubernetes.io/docs/tasks/tools/) (kubernetes CLI)
 
 Add a new folder to the project where we can put all of the kubernetes related code, called `k8s`.
 
-Make sure that kubectl is talking to Docker Desktop
+Make sure that kubectl is talking to Docker Desktop *DONE*
 
 ```sh
 kubectl config use-context docker-desktop
@@ -173,7 +173,7 @@ kubectl config use-context docker-desktop
 #### Namespace
 
 Namespaces help to isolate container workloads that share host nodes. Create a namespace for this class `cst8918`.
-Create a new file `k8s/a01_namespace.yaml` with the following content.
+Create a new file `k8s/a01_namespace.yaml` with the following content. *DONE*
 
 ```yaml
 ---
@@ -183,17 +183,17 @@ metadata:
   name: cst8918
 ```
 
-Activate that namespace with the `kubectl apply -f ./k8s/a01_namespace.yaml` command in the terminal.
+Activate that namespace with the `kubectl apply -f ./k8s/a01_namespace.yaml` command in the terminal. *DONE*
 
 #### Deployment
 
 This describes the application workload: container image, container count, CPU and memory limits, ports, etc.
-Create a `a01_deployment.yaml` file in the `k8s` folder.
+Create a `a01_deployment.yaml` file in the `k8s` folder. *DONE*
 
 ```yaml
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: Deployment 
 metadata:
   name: weather-app-deployment
   namespace: cst8918
@@ -235,7 +235,7 @@ spec:
 
 The API key can be created as a [Kubernetes environment encrypted secret](https://kubernetes.io/docs/concepts/configuration/secret/) and then injected into the containers at runtime.
 
-Run `kubectl create secret generic weather --from-literal='api-key=<your-secret-api-key>' -n cst8918` in the terminal, and then add this to the _env_ section of the deployment file ...
+Run `kubectl create secret generic weather --from-literal='api-key=<your-secret-api-key>' -n cst8918` in the terminal, and then add this to the _env_ section of the deployment file ... *DONE*
 
 ```yaml
 - name: WEATHER_API_KEY
@@ -253,7 +253,7 @@ Now that you have the application containers deployed, the last step is to defin
 
 Allow incoming traffic on the standard HTTP port (80) and have the load balancer forward traffic to the containers on target port 8080.
 
-Create `k8s/a01_service.yaml` with
+Create `k8s/a01_service.yaml` with *DONE*
 
 ```yaml
 ---
@@ -289,7 +289,7 @@ kubectl delete namespace cst8918
 
 For grading this lab activity please submit a single ZIP file called `cst8918-w25-a01-weather.zip` that contains the following files:
 
-Try to fit all four items into a single screen shot.
+Try to fit all four items into a single screen shot. *DONE*
 
 Screenshot:
 
