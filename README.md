@@ -40,7 +40,7 @@ To manage the OpenWeather API limits, the Remix loader route will need to implem
 
 ```
 olga_@MSI MINGW64 /c/Git/26W_CST8918_DevOps_Infrastructure_as_Code/cst8918-w25-a01-weather (main)
-$  echo "GIT:" && git --version
+$ echo "GIT:" && git --version
 echo "NODE:" && node --version
 echo "VS CODE:" code --version
 echo "DOCKER:" && docker --version
@@ -50,7 +50,7 @@ echo "KUBECTL:" && kubectl version --client
 GIT:
 git version 2.52.0.windows.1
 NODE:
-v23.5.0
+v22.22.0
 VS CODE: code --version
 DOCKER:
 Docker version 29.1.3, build f52814d
@@ -88,7 +88,7 @@ Kustomize Version: v5.7.1
 
 - sign-up for a free account at [OpenWeather API](https://home.openweathermap.org/users/sign_up) *DONE*
 - this should send you an email with a new API key (it may take up to two hours before it is active) *DONE*
-- set a local environment variable in your terminal called `WEATHER_API_KEY` with the value of your API key. It will be needed later.
+- set a local environment variable in your terminal called `WEATHER_API_KEY` with the value of your API key. It will be needed later. *DONE*
 
 ```sh
 # linux/mac
@@ -102,14 +102,14 @@ set WEATHER_API_KEY=<your-api-key>
 
 Your team lead has created an initial implementation, which is ready for you to test.
 
-- fork the [GitHub repo](https://github.com/rlmckenney/cst8918-w25-a01-weather)
-- clone a local copy of your forked repo
-- cd into that local repo
-- run `npm install` to pull-in the various libraries and dev dependencies (e.g. remix, react, etc)
-- start the dev server with `npm run dev`
-- open link displayed in your terminal with a browser, e.g. http://localhost:59287
+- fork the [GitHub repo](https://github.com/rlmckenney/cst8918-w25-a01-weather) *DONE*
+- clone a local copy of your forked repo *DONE*
+- cd into that local repo *DONE*
+- run `npm install` to pull-in the various libraries and dev dependencies (e.g. remix, react, etc) *DONE*
+- start the dev server with `npm run dev` *DONE*
+- open link displayed in your terminal with a browser, e.g. http://localhost:59287 *DONE*
 
-You can terminate the dev server by typing `CTL-C` in the terminal when you are done.
+You can terminate the dev server by typing `CTL-C` in the terminal when you are done. *DONE*
 
 ## Part 2 - Kubernetes Deployment
 
